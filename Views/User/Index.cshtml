@@ -1,0 +1,33 @@
+﻿@model List<web_app1.Models.Users>
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["message"]
+        
+    </div>
+}
+<a asp-controller="user" asp-action="create" class="btn btn-success">Create</a>
+Hi @ViewData["user"] Good
+@ViewBag.time
+
+<br />
+@if (Model.Count < 1)
+{
+    <p>No data found</p>
+}
+else
+{
+
+
+    @foreach (var obj in Model)
+    {
+        @obj.Id
+        @obj.name
+        @obj.Role
+        <a asp-action="edit" asp-route-id="@obj.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-primary">Delete</a>
+
+        <br />
+    }
+}
+

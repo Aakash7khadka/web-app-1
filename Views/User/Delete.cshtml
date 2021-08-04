@@ -1,0 +1,16 @@
+﻿@model web_app1.Models.Users
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<form method="post">
+    <input asp-for="Id" type="text" hidden />
+    Name:<input asp-for="name" disabled type="text" />
+
+    Role:<input asp-for="Role" disabled type="text" />
+    <input type="submit" value="submit" />
+
+</form>
